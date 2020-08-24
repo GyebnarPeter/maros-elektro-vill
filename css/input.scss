@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
+
+$primary-font-stack: 'Roboto', sans-serif;
+$secondary-font-stack: 'Anton', sans-serif;
+$brand-color: #f2920b;
+
+@mixin center-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $primary-font-stack;
+    font-weight: 300;
+}
+
+
+
+/*---------------------- HEADER ----------------------*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    color: white;
+}
+
+header svg {
+    height: 15px;
+    margin-right: 15px;
+    fill: $brand-color;
+}
+
+.header-address {
+    @include center-position;
+    border-right: 1px solid rgb(80, 80, 80);
+    padding: 15px 20px;
+}
+
+.header-contact {
+    display: flex;
+    border-width: 0 1px 0 1px;
+    border-color: rgb(80, 80, 80);
+    border-style: solid;
+    padding: 15px 20px;
+}
+
+.header-contact-email {
+    margin-right: 100px;
+    @include center-position;
+}
+
+.header-contact-phone {
+    @include center-position;
+}
+
+.header-social {
+    border-left: 1px solid rgb(80, 80, 80);
+    padding: 15px 20px;
+    @include center-position;
+    svg {
+        fill: white;
+    }
+}
+
+
+
+/*---------------------- NAVBAR ----------------------*/
+
+.navbar-logo img {
+    width: 200px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        li {
+            margin-left: 20px;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+.burger-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-icon span {
+    width: 25px;
+    height: 3px;
+    background: black;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.burger-icon span:nth-child(1) {
+    background: $brand-color;
+}
+
+.nav-close-btn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+
+
+/*---------------------- SLIDER ----------------------*/
+
+.slider img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+}
+
+
+
+@media ( max-width: 576px ) {}
+
+@media ( max-width: 768px ) {
+
+    .header-contact {
+        width: 100%;
+        justify-content: space-between;
+        border: none;
+    }
+
+    .header-contact-email {
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .header-contact-phone {
+        align-items: flex-end;
+        flex-direction: column;
+        svg {
+            margin: 0;
+        }
+    }
+
+    .header-social {
+        display: none;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: red;
+        text-align: center;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    .burger-icon {
+        display: block;
+    }
+}
+
+@media ( max-width: 992px ) {
+
+    .header-address {
+        display: none;
+    }
+}
+
+@media ( max-width: 1200px ) {}
