@@ -304,7 +304,7 @@ nav {
     line-height: 1.5;
 
     > div {
-        padding: 40px;
+        padding: 20px;
     }
 
     h1 {
@@ -328,7 +328,7 @@ nav {
     .line {
         border-top: 1px solid $brand-color;
         width: 100px;
-        transform: translateX(-40px);
+        transform: translateX(-20px);
     }
 
     span {
@@ -354,16 +354,188 @@ nav {
 
 .about-us-pic {
     position: relative;
+}
 
-    .back-pic {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -100;
-    }
+.back-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    transition: .4s;
+}
+
+.about-us-pic:hover .back-pic {
+    transform: translateX(-20px);
 }
 
 
+
+/*---------------------- SERVICES ----------------------*/
+
+.services {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: url("../img/service-bg.jpg") no-repeat top fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+
+    span {
+        color: $brand-color;
+    }
+}
+
+.services-head {
+    width: 100%;
+
+    h1 {
+        font-family: $secondary-font-stack;
+        font-weight: 400;
+        font-size: 3em;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1em;
+        letter-spacing: 7px;
+        margin-bottom: 22px;
+    }
+
+    .line {
+        border-top: 1px solid $brand-color;
+        width: 100px;
+        margin: 0 auto 50px auto;
+    }
+}
+
+.service-items {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-areas:
+        'service-1 service-2 service-3'
+        'service-4 service-5 service-6';
+
+    h1 {
+        font-family: $secondary-font-stack;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    h2 {
+        font-family: $secondary-font-stack;
+        font-weight: 400;
+        font-size: 3em;
+        margin: 0;
+    }
+
+    div {
+        padding: 20px;
+    }
+}
+
+.service-1 { grid-area: service-1; }
+.service-2 { grid-area: service-2; }
+.service-3 { grid-area: service-3; }
+.service-4 { grid-area: service-4; }
+.service-5 { grid-area: service-5; }
+.service-6 { grid-area: service-6; }
+
+
+
+/*---------------------- OPINIONS ----------------------*/
+
+.opinions {
+    width: 100%;
+    background: url("../img/slide03.jpg") no-repeat top fixed;
+    background-size: cover;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    margin: 100px 0;
+}
+
+.opinions-head {
+
+    h1 {
+        font-family: $secondary-font-stack;
+        font-weight: 400;
+        font-size: 3em;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1em;
+        letter-spacing: 7px;
+        margin-bottom: 22px;
+    }
+
+    .line {
+        border-top: 1px solid $brand-color;
+        width: 100px;
+        margin: 0 auto 50px auto;
+    }
+
+    span {
+        color: $brand-color;
+    }
+}
+
+.opinion {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto;
+
+    div {
+        padding: 20px;
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+
+    .comment {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        font-size: 1.3em;
+        font-weight: 300;
+    }
+
+    svg {
+        width: 20px;
+        fill: white;
+        cursor: pointer;
+    }
+
+    svg:hover {
+        fill: $brand-color;
+    }
+}
+
+.opinion-pic {
+    position: relative;
+
+    .author-pic {
+       width: 100%;
+       max-width: 400px;
+    }
+
+    .quote-mark {
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+}
 
 
 
@@ -461,6 +633,31 @@ nav {
         width: 100%;
         padding: 20px;
     }
+
+    .service-items {
+        width: 100%;
+        display: block;
+
+        div {
+            margin-bottom: 50px;
+        }
+    }
+
+    .opinion {
+        display: block;
+    }
+
+    .opinion-pic {
+
+        .author-pic {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .quote-mark {
+            display: none;
+        }
+    }
 }
 
 @media ( max-width: 1200px ) {
@@ -478,4 +675,14 @@ nav {
         }
     }
 
+    .service-items {
+        grid-template-areas:
+            'service-1 service-2'
+            'service-3 service-4'
+            'service-5 service-6';
+        
+        div {
+            padding: 0 50px;
+        }
+    }
 }

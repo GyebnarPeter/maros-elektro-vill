@@ -282,7 +282,7 @@ nav ul li a:hover {
   line-height: 1.5;
 }
 .about-us > div {
-  padding: 40px;
+  padding: 20px;
 }
 .about-us h1 {
   font-family: "Anton", sans-serif;
@@ -302,7 +302,7 @@ nav ul li a:hover {
 .about-us .line {
   border-top: 1px solid #f2920b;
   width: 100px;
-  transform: translateX(-40px);
+  transform: translateX(-20px);
 }
 .about-us span {
   color: #f2920b;
@@ -325,11 +325,176 @@ nav ul li a:hover {
 .about-us-pic {
   position: relative;
 }
-.about-us-pic .back-pic {
+
+.back-pic {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -100;
+  transition: 0.4s;
+}
+
+.about-us-pic:hover .back-pic {
+  transform: translateX(-20px);
+}
+
+/*---------------------- SERVICES ----------------------*/
+.services {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url("../img/service-bg.jpg") no-repeat top fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+.services span {
+  color: #f2920b;
+}
+
+.services-head {
+  width: 100%;
+}
+.services-head h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+  margin-bottom: 0;
+}
+.services-head h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 7px;
+  margin-bottom: 22px;
+}
+.services-head .line {
+  border-top: 1px solid #f2920b;
+  width: 100px;
+  margin: 0 auto 50px auto;
+}
+
+.service-items {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-areas: "service-1 service-2 service-3" "service-4 service-5 service-6";
+}
+.service-items h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+.service-items h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+  margin: 0;
+}
+.service-items div {
+  padding: 20px;
+}
+
+.service-1 {
+  grid-area: service-1;
+}
+
+.service-2 {
+  grid-area: service-2;
+}
+
+.service-3 {
+  grid-area: service-3;
+}
+
+.service-4 {
+  grid-area: service-4;
+}
+
+.service-5 {
+  grid-area: service-5;
+}
+
+.service-6 {
+  grid-area: service-6;
+}
+
+/*---------------------- OPINIONS ----------------------*/
+.opinions {
+  width: 100%;
+  background: url("../img/slide03.jpg") no-repeat top fixed;
+  background-size: cover;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  margin: 100px 0;
+}
+
+.opinions-head h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+  margin: 0;
+  padding: 0 20px;
+}
+.opinions-head h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 7px;
+  margin-bottom: 22px;
+}
+.opinions-head .line {
+  border-top: 1px solid #f2920b;
+  width: 100px;
+  margin: 0 auto 50px auto;
+}
+.opinions-head span {
+  color: #f2920b;
+}
+
+.opinion {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+}
+.opinion div {
+  padding: 20px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.opinion .comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+.opinion svg {
+  width: 20px;
+  fill: white;
+  cursor: pointer;
+}
+.opinion svg:hover {
+  fill: #f2920b;
+}
+
+.opinion-pic {
+  position: relative;
+}
+.opinion-pic .author-pic {
+  width: 100%;
+  max-width: 400px;
+}
+.opinion-pic .quote-mark {
+  position: absolute;
+  top: 20px;
+  right: 0;
 }
 
 @media (max-width: 768px) {
@@ -420,6 +585,26 @@ nav ul li a:hover {
     width: 100%;
     padding: 20px;
   }
+
+  .service-items {
+    width: 100%;
+    display: block;
+  }
+  .service-items div {
+    margin-bottom: 50px;
+  }
+
+  .opinion {
+    display: block;
+  }
+
+  .opinion-pic .author-pic {
+    width: 100%;
+    max-width: 500px;
+  }
+  .opinion-pic .quote-mark {
+    display: none;
+  }
 }
 @media (max-width: 1200px) {
   .about-us {
@@ -431,6 +616,13 @@ nav ul li a:hover {
   .about-us .line {
     margin: 0 auto;
     transform: translateX(0);
+  }
+
+  .service-items {
+    grid-template-areas: "service-1 service-2" "service-3 service-4" "service-5 service-6";
+  }
+  .service-items div {
+    padding: 0 50px;
   }
 }
 
