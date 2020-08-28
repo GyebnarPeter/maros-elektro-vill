@@ -79,6 +79,13 @@ header svg {
   width: 100%;
 }
 
+.navbar-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(48, 56, 73, 0.8);
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -122,6 +129,7 @@ nav ul li a:hover {
   color: white;
   font-size: 2em;
   font-weight: 600;
+  z-index: 10000;
 }
 
 /*---------------------- SLIDER ----------------------*/
@@ -235,10 +243,16 @@ nav ul li a:hover {
   }
 }
 /*---------------------- OFFER ----------------------*/
+.offer-wrap {
+  position: absolute;
+  top: 80vh;
+  width: 100%;
+}
+
 .offer {
   background: url("../img/offer-bg.png") no-repeat top;
   background-size: cover;
-  margin: 70vh auto 0 auto;
+  margin: 0 auto;
   width: 80%;
   max-width: 1200px;
   padding: 40px 0;
@@ -275,7 +289,7 @@ nav ul li a:hover {
   width: 100%;
   max-width: 1200px;
   padding: 100px 0;
-  margin: 0 auto;
+  margin: 100vh auto 0 auto;
   display: flex;
   align-items: center;
   color: #303849;
@@ -288,6 +302,7 @@ nav ul li a:hover {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   font-size: 3em;
+  margin: 0;
 }
 .about-us h2 {
   font-family: "Anton", sans-serif;
@@ -422,6 +437,32 @@ nav ul li a:hover {
 }
 
 /*---------------------- OPINIONS ----------------------*/
+.description {
+  width: 100%;
+  text-align: center;
+  margin: 50px 0;
+}
+.description h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+  margin: 0;
+}
+.description h1 span {
+  color: #f2920b;
+}
+.description h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 7px;
+  margin-bottom: 30px;
+}
+.description p {
+  padding: 0 30px;
+}
+
+/*---------------------- OPINIONS ----------------------*/
 .opinions {
   width: 100%;
   background: url("../img/slide03.jpg") no-repeat top fixed;
@@ -429,7 +470,6 @@ nav ul li a:hover {
   color: white;
   padding: 50px 0;
   text-align: center;
-  margin: 100px 0;
 }
 
 .opinions-head h1 {
@@ -497,6 +537,69 @@ nav ul li a:hover {
   right: 0;
 }
 
+/*---------------------- FOOTER ----------------------*/
+.footer-wrap {
+  width: 100%;
+  background: #303849;
+}
+
+footer {
+  color: white;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-around;
+}
+footer > div {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 25px;
+}
+footer svg {
+  width: 15px;
+  fill: #f2920b;
+  margin-right: 20px;
+}
+footer h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+  margin: 0 0 40px 0;
+}
+footer h1 span {
+  color: #f2920b;
+}
+
+.footer-logo img {
+  width: 200px;
+  margin-bottom: 30px;
+}
+.footer-logo p {
+  line-height: 1.4;
+  font-weight: 200;
+}
+
+.footer-contact div {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(80, 80, 80, 0.5);
+}
+
+.footer-contact div:last-child {
+  border-bottom: 1px solid rgba(80, 80, 80, 0.5);
+}
+
+.footer-social svg {
+  cursor: pointer;
+}
+
+.footer-social svg:hover {
+  fill: white;
+}
+
 @media (max-width: 768px) {
   .header-contact {
     width: 100%;
@@ -505,17 +608,15 @@ nav ul li a:hover {
   }
 
   .header-contact-email {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
     margin: 0;
   }
 
   .header-contact-phone {
-    align-items: flex-end;
-    flex-direction: column;
+    align-items: center;
   }
   .header-contact-phone svg {
-    margin: 0;
+    margin: 0 15px 0 0;
   }
 
   .header-social {
@@ -536,6 +637,7 @@ nav ul li a:hover {
     background: black;
     text-align: center;
     padding-top: 100px;
+    z-index: 1000;
   }
   nav ul {
     display: block;
@@ -559,6 +661,14 @@ nav ul li a:hover {
   .slider .slide-text h3 {
     font-size: 0.5em;
   }
+
+  .about-us {
+    padding: 200px 0 0 0;
+  }
+
+  footer {
+    padding-bottom: 30px;
+  }
 }
 @media (max-width: 992px) {
   .header-address {
@@ -573,8 +683,13 @@ nav ul li a:hover {
     margin-bottom: 30px;
   }
 
+  .about-us {
+    margin-top: 140vh;
+  }
+
   .about-us-pic img {
     width: 100%;
+    margin-top: 30px;
   }
 
   .about-us .back-pic {
@@ -604,6 +719,15 @@ nav ul li a:hover {
   }
   .opinion-pic .quote-mark {
     display: none;
+  }
+
+  footer {
+    display: block;
+    padding-top: 40px;
+  }
+
+  .footer-logo, .footer-contact {
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 1200px) {
